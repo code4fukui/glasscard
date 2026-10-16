@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#edf4ff">
+  <title>glasscard — SABERA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="glasscard home">
+        <span class="brand-mark">✦</span>
+        <span>glasscard<small>for SABERA</small></span>
+      </a>
+      <div class="header-actions">
+        <button class="connect-button" id="sabera-connect"><span class="connection-dot"></span><span id="connection-label">SABERAに接続</span></button>
+        <label class="import-button" title="CSVを読み込む">
+          <input id="csv-input" type="file" accept=".csv,text/csv">
+          <span>＋</span> CSVを追加
+        </label>
+        <button class="icon-button" id="reset-button" aria-label="最初からやり直す" title="最初からやり直す">↻</button>
+      </div>
+    </header>
+
+    <section class="intro">
+      <div>
+        <p class="eyebrow">STUDY SESSION</p>
+        <h1>すきま時間に、<em>ひとつずつ。</em></h1>
+        <p class="intro-copy">カードをめくりながら、覚えたいことを軽やかにインプット。</p>
+      </div>
+      <div class="session-stat"><strong id="session-count">0</strong><span>cards<br>today</span></div>
+    </section>
+
+    <section class="workspace" aria-label="暗記カード">
+      <div class="progress-row">
+        <div class="deck-label"><span class="status-dot"></span><span id="deck-name">電気工事士 二種</span></div>
+        <span id="progress-label">1 / 5</span>
+      </div>
+      <div class="progress-track"><span id="progress-bar"></span></div>
+
+      <div class="card-stage">
+        <div class="card-shadow shadow-back"></div>
+        <div class="card-shadow shadow-front"></div>
+        <button class="flashcard" id="flashcard" aria-label="カードをめくる">
+          <span class="card-corner">QUESTION</span>
+          <span class="card-number" id="card-number">01</span>
+          <span class="card-content" id="card-content"></span>
+          <span class="card-hint">タップして答えを見る <span>↗</span></span>
+          <span class="card-answer" id="card-answer"></span>
+        </button>
+      </div>
+
+      <div class="controls">
+        <button class="round-button" id="prev-button" aria-label="前のカード">←</button>
+        <button class="play-button" id="play-button"><span class="play-icon">▶</span><span id="play-label">連続表示</span></button>
+        <button class="round-button" id="next-button" aria-label="次のカード">→</button>
+      </div>
+      <button class="mastered-button" id="mastered-button"><span>✓</span><span id="mastered-label">覚えたのでスキップ</span></button>
+      <p class="keyboard-hint"><kbd>←</kbd><kbd>→</kbd> カード移動　 <kbd>Space</kbd> 答えを表示</p>
+    </section>
+
+    <footer class="footer"><span>BUILT FOR FOCUS</span><span class="footer-line"></span><span id="card-total">5 cards</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
